@@ -1,22 +1,28 @@
 package com.ua.cabare;
 
 import javax.persistence.*;
+import java.util.Collection;
+import java.sql.SQLException;
+
 
 @Entity
 @Table(name = "menu")
-public class Dish {
+public class Dish extends Object{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private String id;
+
+    @Column(name = "NAME")
     private String name;
 
+    @Column(name = "PRICE")
     private Double price;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
